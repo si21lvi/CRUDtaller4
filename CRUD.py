@@ -26,3 +26,10 @@ def update_user(id, name, email):
 def delete_user(id):
     cursor.execute("DELETE FROM users WHERE id = ?", (id,))
     conn.commit()
+create_user("Alice", "alice@mail.com")
+print(read_users())  # Ver todos los usuarios
+update_user(1, "Alice Updated", "alice_updated@mail.com")
+delete_user(1)
+
+# Cerrar conexión
+conn.close()
